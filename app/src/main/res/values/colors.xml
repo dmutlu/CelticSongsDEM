@@ -2,5 +2,6 @@
 <resources>
     <color name="colorPrimary">#4caf50</color>
     <color name="colorPrimaryDark">#388e3c</color>
-    <color name="colorAccent">#ff4081</color>
+    <color name="colorAccent">#fbc02d</color>
+    <color name="celticGreen">#008F00</color>
 </resources>
