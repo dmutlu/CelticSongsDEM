@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Celtic Songs DEM</string>
+    <string name="jig">Jig</string>
+    <string name="bagpipes">Bagpipes</string>
 </resources>

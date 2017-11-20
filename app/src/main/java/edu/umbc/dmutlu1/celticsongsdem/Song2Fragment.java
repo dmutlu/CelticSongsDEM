@@ -26,7 +26,7 @@ public class Song2Fragment extends Fragment implements View.OnClickListener
         View view = inflater.inflate(R.layout.fragment_song2, container, false);
 
         mediaBtn = view.findViewById(R.id.mediaCtrl2);
-        //mediaPlayer = MediaPlayer.create(getActivity(), R.raw.drums);
+        mediaPlayer = MediaPlayer.create(getActivity(), R.raw.bagpipes);
         mediaPlayer.setLooping(true);
         mediaBtn.setOnClickListener(this);
 

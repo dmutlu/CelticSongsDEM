@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity
         Fragment song1 = new Fragment();
         Bundle bundle = new Bundle();
         bundle.putBoolean("test", false);
-        song1.setArguments(bundle);
+        //song1.setArguments(bundle);
 
         TabLayout tabLayout = findViewById(R.id.tab_layout);
 

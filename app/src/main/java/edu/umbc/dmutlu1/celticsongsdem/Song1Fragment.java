@@ -15,7 +15,7 @@ public class Song1Fragment extends Fragment implements View.OnClickListener
     private ImageButton mediaBtn;
     private static MediaPlayer mediaPlayer;
     private String key;
-    private Boolean isPlaying;
+    private Boolean isPlaying = false;
 
     public Song1Fragment()
     {
@@ -29,7 +29,7 @@ public class Song1Fragment extends Fragment implements View.OnClickListener
         View view = inflater.inflate(R.layout.fragment_song1, container, false);
 
         mediaBtn = view.findViewById(R.id.mediaCtrl1);
-        //mediaPlayer = MediaPlayer.create(getActivity(), R.raw.ukulele);
+        mediaPlayer = MediaPlayer.create(getActivity(), R.raw.jig);
         mediaPlayer.setLooping(true);
         mediaBtn.setOnClickListener(this);
 
@@ -37,14 +37,14 @@ public class Song1Fragment extends Fragment implements View.OnClickListener
         return view;
     }
 
-    public Boolean getPlaying()
+    /*public Boolean getPlaying()
     {
         return this.getArguments().getBoolean(key, isPlaying);
-    }
+    }*/
 
     public void onClick(View v)
     {
-        if (mediaPlayer.isPlaying() || getPlaying())
+        if (mediaPlayer.isPlaying() || isPlaying)
         {
             mediaPlayer.pause();
             mediaBtn.setImageResource(android.R.drawable.ic_media_play);
