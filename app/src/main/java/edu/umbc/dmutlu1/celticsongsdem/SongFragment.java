@@ -36,7 +36,7 @@ public class SongFragment extends Fragment implements View.OnClickListener
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState)
     {
-        View view = inflater.inflate(R.layout.fragment_song1, container, false);
+        View view = inflater.inflate(R.layout.fragment_song, container, false);
         ImageView image = view.findViewById(R.id.imageDance);
 
         image.setImageResource(getArguments().getInt("imageID"));
