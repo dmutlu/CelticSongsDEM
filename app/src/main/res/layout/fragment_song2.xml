@@ -2,7 +2,7 @@
               xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent" android:orientation="vertical"
-              tools:context="edu.umbc.dmutlu1.celticsongsdem.Song1Fragment" android:weightSum="1"
+              tools:context="edu.umbc.dmutlu1.celticsongsdem.SongFragment" android:weightSum="1"
               android:gravity="center">
 
     <ImageView

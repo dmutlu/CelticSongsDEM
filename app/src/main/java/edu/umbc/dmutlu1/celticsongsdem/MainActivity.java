@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity
-        implements Song1Fragment.OnFragmentInteractionListener, Song2Fragment.OnFragmentInteractionListener
+        implements SongFragment.OnFragmentInteractionListener, Song2Fragment.OnFragmentInteractionListener
 {
 
     @Override

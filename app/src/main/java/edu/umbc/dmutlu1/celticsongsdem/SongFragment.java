@@ -9,17 +9,28 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 
-public class Song1Fragment extends Fragment implements View.OnClickListener
+public class SongFragment extends Fragment implements View.OnClickListener
 {
     private ImageButton mediaBtn;
-    private static MediaPlayer mediaPlayer;
+    private MediaPlayer mediaPlayer;
     private OnFragmentInteractionListener mCallback;
 
-    public Song1Fragment()
+    public SongFragment()
     {
         // Required empty public constructor
+    }
+
+    public static SongFragment newInstance(int audio, int image)
+    {
+        SongFragment fragment = new SongFragment();
+        Bundle bundle = new Bundle(2);
+        bundle.putInt("imageID", image);
+        bundle.putInt("audioID", audio);
+        fragment.setArguments(bundle);
+        return fragment;
     }
 
     @Override
@@ -27,9 +38,12 @@ public class Song1Fragment extends Fragment implements View.OnClickListener
                              Bundle savedInstanceState)
     {
         View view = inflater.inflate(R.layout.fragment_song1, container, false);
+        ImageView image = view.findViewById(R.id.imageDance);
 
-        mediaBtn = view.findViewById(R.id.mediaCtrl1);
-        mediaPlayer = MediaPlayer.create(getActivity(), R.raw.jig);
+        image.setImageResource(getArguments().getInt("imageID"));
+
+        mediaBtn = view.findViewById(R.id.mediaCtrl);
+        mediaPlayer = MediaPlayer.create(getActivity(), getArguments().getInt("audioID"));
         mediaPlayer.setLooping(true);
         mediaBtn.setOnClickListener(this);
 

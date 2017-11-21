@@ -19,9 +19,9 @@ public class PagerAdapter extends FragmentStatePagerAdapter
 
             switch (position) {
                 case 0:
-                    return new Song1Fragment();
+                    return SongFragment.newInstance(R.raw.jig, R.drawable.jig);
                 case 1:
-                    return new Song1Fragment();
+                    return SongFragment.newInstance(R.raw.bagpipes, R.drawable.bagpipes);
                 default:
                     return null;
             }
