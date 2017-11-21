@@ -2,7 +2,6 @@ package edu.umbc.dmutlu1.celticsongsdem;
 
 import android.content.Context;
 import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -42,9 +41,9 @@ public class SongFragment extends Fragment implements View.OnClickListener
 
         image.setImageResource(getArguments().getInt("imageID"));
 
-        mediaBtn = view.findViewById(R.id.mediaCtrl);
         mediaPlayer = MediaPlayer.create(getActivity(), getArguments().getInt("audioID"));
         mediaPlayer.setLooping(true);
+        mediaBtn = view.findViewById(R.id.mediaCtrl);
         mediaBtn.setOnClickListener(this);
 
         // Inflate the layout for this fragment
@@ -70,14 +69,20 @@ public class SongFragment extends Fragment implements View.OnClickListener
     {
         if (mediaPlayer.isPlaying())
         {
-            mediaPlayer.pause();
-            mediaBtn.setImageResource(android.R.drawable.ic_media_play);
-            mCallback.onFragmentInteraction(true);
+            pause();
         }
         else {
+            mCallback.onFragmentInteraction(this);
+
             mediaPlayer.start();
             mediaBtn.setImageResource(android.R.drawable.ic_media_pause);
         }
+    }
+
+    public void pause()
+    {
+        mediaPlayer.pause();
+        mediaBtn.setImageResource(android.R.drawable.ic_media_play);
     }
 
     /**
@@ -88,6 +93,6 @@ public class SongFragment extends Fragment implements View.OnClickListener
      */
     public interface OnFragmentInteractionListener
     {
-        void onFragmentInteraction(Boolean mediaPlaying);
+        void onFragmentInteraction(SongFragment fragment);
     }
 }

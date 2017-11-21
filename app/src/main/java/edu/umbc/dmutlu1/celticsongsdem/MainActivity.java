@@ -6,8 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity
-        implements SongFragment.OnFragmentInteractionListener, Song2Fragment.OnFragmentInteractionListener
+        implements SongFragment.OnFragmentInteractionListener
 {
+    private SongFragment lastFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -41,8 +42,12 @@ public class MainActivity extends AppCompatActivity
         });
     }
 
-    public void onFragmentInteraction(Boolean mediaPlaying)
+    public void onFragmentInteraction(SongFragment fragment)
     {
-        mediaPlaying = true;
+        if (lastFragment != null)
+        {
+            lastFragment.pause();
+        }
+        lastFragment = fragment;
     }
 }
