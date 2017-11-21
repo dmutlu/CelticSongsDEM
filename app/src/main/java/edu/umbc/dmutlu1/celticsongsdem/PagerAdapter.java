@@ -8,6 +8,7 @@ public class PagerAdapter extends FragmentStatePagerAdapter
 {
        private int mNumOfTabs;
 
+
         public PagerAdapter(FragmentManager fm, int NumOfTabs) {
             super(fm);
             this.mNumOfTabs = NumOfTabs;
@@ -20,7 +21,7 @@ public class PagerAdapter extends FragmentStatePagerAdapter
                 case 0:
                     return new Song1Fragment();
                 case 1:
-                    return new Song2Fragment();
+                    return new Song1Fragment();
                 default:
                     return null;
             }

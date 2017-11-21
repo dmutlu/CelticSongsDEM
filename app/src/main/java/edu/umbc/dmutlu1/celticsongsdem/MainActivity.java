@@ -1,8 +1,6 @@
 package edu.umbc.dmutlu1.celticsongsdem;
 
-import android.net.Uri;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,15 +15,8 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Fragment song1 = new Fragment();
-        Bundle bundle = new Bundle();
-        bundle.putBoolean("test", false);
-        //song1.setArguments(bundle);
-
         TabLayout tabLayout = findViewById(R.id.tab_layout);
-
         final ViewPager viewPager = findViewById(R.id.pager);
-
         final PagerAdapter adapter = new PagerAdapter
                 (getSupportFragmentManager(), tabLayout.getTabCount());
 
@@ -48,13 +39,10 @@ public class MainActivity extends AppCompatActivity
             public void onTabReselected(TabLayout.Tab tab) {
             }
         });
-
-
-
     }
 
-    public void onFragmentInteraction(Uri uri)
+    public void onFragmentInteraction(Boolean mediaPlaying)
     {
-
+        mediaPlaying = true;
     }
 }
